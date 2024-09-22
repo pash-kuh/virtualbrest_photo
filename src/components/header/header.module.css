@@ -1,0 +1,67 @@
+.main_header_block {
+    margin: 0 auto;
+    width: 100%;
+    text-align: center;
+    background: linear-gradient(180deg, #14229F 12.34%, #3E61C8 100%) !important;
+    box-shadow: 0 4px 28px rgba(126, 137, 163, 0.2);
+    z-index: 400;
+}
+
+.header_block {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    color: #FFFFFF;
+    height: 78px;
+    padding: 0 !important;
+}
+
+.logo_container {
+    cursor: pointer;
+    padding-left: 90px;
+    filter: drop-shadow(0px 6px 18px rgba(126, 137, 163, 0.2));
+    z-index: 501;
+}
+
+.logo {
+    position: relative;
+    top: 34px;
+}
+
+.date_picker {
+
+}
+
+.buttons_block {
+    display: flex;
+    width: 30%
+}
+
+/*.buttons {*/
+/*    outline: none;*/
+/*    text-decoration: none;*/
+
+/*    margin-right: 10px;*/
+/*    color: #FFFFFF !important;*/
+/*    transition: 1s background-color, color, border;*/
+/*    background-color: #365ac7;*/
+/*}*/
+
+/*.buttons:hover {*/
+/*    border: 1px solid rgba(255, 255, 255, 0.44) !important;*/
+/*    color: #FFFFFF !important;*/
+/*    transition: 1s background-color, color, border;*/
+/*    background-color: #14229F;*/
+/*}*/
+
+@media (max-width: 500px) {
+    .buttons_block {
+        display: none;
+    }
+    .date_picker {
+        position: absolute;
+        left: 50%;
+        top: 120px;
+    }
+}

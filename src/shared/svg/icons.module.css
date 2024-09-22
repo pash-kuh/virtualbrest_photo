@@ -1,0 +1,19 @@
+.folder_icon {width:100%; height:100%; display:flex;}
+.folder_icon svg {height:18px; margin:auto; position:relative;}
+.default_folder svg {fill:#ffd659;}
+.administrator_folder svg {fill:#6ea8f5;}
+.storage_folder svg {fill:#71cb3f;}
+.storage_group svg {fill:#61b92f;}
+.administrator_group svg {fill:var(--main-icon-color);}
+.shop svg {fill:#ff9200;}
+.waste_group svg {fill:#f52727;}
+
+.fridge svg {height:17px;}
+.default_folder svg, .storage_folder svg, .administrator_folder,
+.laminarFlowCabinet svg, .freezer svg, .fumeHood svg, .detentionAndCorrectionalOccupancy svg {height:16px;}
+.useManufacturing svg {height:16px; top:-2px;}
+.mixingVesselOpen svg {height:15px;}
+.room svg {height:14px;}
+.ambulatoryHeathCareOccupancy svg {height:13px;}
+.outdoor svg {top:-1px;}
+.reactionVesselOpen svg {height:13px;}

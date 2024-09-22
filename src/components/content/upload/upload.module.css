@@ -1,0 +1,51 @@
+.dragger_block {
+    width: 100%;
+}
+
+.upload_text {
+    color: rgba(0, 0, 0, 0.35);
+    font-size: 15px;
+}
+
+.upload_text > a {
+    color: rgba(0, 0, 0, 0.60);
+}
+
+.dragger {
+    margin-bottom: 5%;
+}
+
+
+.upload_button_main_block {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+.upload_button {
+    width: 100%;
+}
+
+.upload-list-inline .ant-upload-list-item {
+    float: left;
+    width: 200px;
+    margin-inline-end: 8px;
+}
+
+.ant-upload-rtl.upload-list-inline .ant-upload-list-item {
+    float: right;
+}
+
+@media (max-width: 500px) {
+    .content_grid_block {
+        width: 100%;
+        margin: 50px 10px 20px 10px;
+        flex-wrap: wrap;
+    }
+    .photo_list_block {
+        width: 100%;
+        margin-left: 10px;
+    }
+    .upload_text {
+        display: none;
+    }
+}

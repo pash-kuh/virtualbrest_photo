@@ -1,0 +1,42 @@
+.main_grid_block {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.content_grid_block {
+    display: flex;
+    flex-direction: row;
+    width: 90%;
+    height: 100%;
+    min-height: 100%;
+    margin: 5% auto;
+}
+
+.grid_block {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.text_epmty {
+    font-family: Inter;
+    font-size: 16px;
+    font-style: italic;
+    font-weight: 400;
+    line-height: 26px;
+    letter-spacing: 0px;
+    text-align: left;
+
+    color: rgba(111, 111, 125, 1);
+
+}
+.empty_block {
+    margin: 25% auto;
+}
+
+@media (max-width: 500px) {
+    .main_grid_block {
+        width: 100%;
+        margin: 20px 0 0 0 ;
+    }
+}
