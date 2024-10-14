@@ -5,11 +5,11 @@ import { OnePhotoItem } from "./one-grid-item"
 import Box from "@mui/material/Box"
 import { allTexts } from "@/shared/constants"
 import { Masonry } from "@mui/lab"
-import { FileObject } from "mui-file-dropzone"
+import { FileObjectType } from "@/shared/types"
 
 import s from "./grid.module.css"
 
-export const Grid = ({ photos }: { photos: FileObject[] }) => {
+export const Grid = ({ photos }: { photos: FileObjectType[] }) => {
 
     return (
         <>

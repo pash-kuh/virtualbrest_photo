@@ -10,6 +10,7 @@ import { apiRequests } from "@/shared/api"
 import { FileObjectType } from "@/shared/types"
 
 import s from "../general.module.css"
+import {VerticalToggleButtons} from "@/shared/components/change-view-mode-buttons";
 
 export const Content = () => {
 	const [photos, setPhotos] = useState<FileObjectType[]>([])
@@ -46,6 +47,10 @@ export const Content = () => {
 						photos={photos}
 						setPhotos={setPhotos}
 					/>
+				</Box>
+
+				<Box sx={{ position: "relative", top: 25 }}>
+					<VerticalToggleButtons />
 				</Box>
 			</Box>
 		</>
