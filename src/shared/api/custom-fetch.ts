@@ -38,7 +38,7 @@ export const fetchApi = async ({ url, options }: CustomFetchType) => {
 
 export const notFoundStatus = { statusCode: 400 }
 export const badGatewayStatus = { statusCode: 502 }
-export const correctStatus = (data: unknown) => ({ statusCode: 200, ...data })
+export const correctStatus = (data: unknown) => ({ statusCode: 200, data })
 export const ROOT_URL = process.env.NODE_ENV === "development"
     ? process.env.LOCALHOST_ROOT_URL
     : process.env.PROD_ROOT_URL

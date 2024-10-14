@@ -8,9 +8,9 @@ import Backdrop from "@mui/material/Backdrop"
 import CircularProgress from "@mui/material/CircularProgress"
 import { apiRequests } from "@/shared/api"
 import { FileObjectType } from "@/shared/types"
+import { VerticalToggleButtons } from "@/shared/components/change-view-mode-buttons"
 
 import s from "../general.module.css"
-import {VerticalToggleButtons} from "@/shared/components/change-view-mode-buttons";
 
 export const Content = () => {
 	const [photos, setPhotos] = useState<FileObjectType[]>([])
@@ -43,10 +43,7 @@ export const Content = () => {
 					/>
 				</Box>
 				<Box className={s.photo_list_block}>
-					<Grid
-						photos={photos}
-						setPhotos={setPhotos}
-					/>
+					<Grid photos={photos} />
 				</Box>
 
 				<Box sx={{ position: "relative", top: 25 }}>

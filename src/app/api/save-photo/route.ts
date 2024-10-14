@@ -2,7 +2,6 @@
 
 import { writeFile } from "fs/promises"
 import path from "path"
-import sharp from "sharp"
 import {
     correctStatus, badGatewayStatus, notFoundStatus
 } from "@/shared/api/custom-fetch"
@@ -27,8 +26,9 @@ export async function POST(request: Request) {
             console.log(`Image written: ${filePath}`)
         }
 
-        return NextResponse.json(correctStatus({ status: "success" }))
+        return NextResponse.json(correctStatus("success"))
     } catch (error) {
+        console.log(error)
         return NextResponse.json(badGatewayStatus)
     }
 }

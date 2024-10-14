@@ -26,7 +26,7 @@ export const UploadComponent = ({ setPhotos, setLoading }: UploadComponentInterf
 	const handleButtonClick = async () => {
 		setLoading(true)
 		const payload = {
-			files: files.map(f => ({
+			files: files.map(() => ({
 				imageURL: "test1"
 			}))
 		}

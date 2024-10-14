@@ -15,8 +15,9 @@ export async function GET() {
             imageURL: `${ROOT_URL}/${uploadOptions.rootFolderName}/${file}`
         }))
 
-        return NextResponse.json(correctStatus({ data: jsonObjects }))
+        return NextResponse.json(correctStatus(jsonObjects))
     } catch (error) {
+        console.log(error)
         return NextResponse.json(badGatewayStatus)
     }
 }
