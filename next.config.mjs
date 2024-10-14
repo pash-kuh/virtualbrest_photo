@@ -1,6 +1,5 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    reactStrictMode: true,
     async headers() {
         return [
             {
@@ -21,18 +20,12 @@ const nextConfig = {
         scrollRestoration: true
     },
     env: {
-        CHAT_ID: "-1001984120590",
-        TOKEN_CHAT: "bot6118741109:AAGNIUS3_g8ahPvh4cojr66H8ecFbycKPcc",
-        INFORMER_URL: "https://admin.myfin.by/outer/informer/brest/full",
-        CURRENT_SITE_URL: "https://vbrest.by",
+        VBREST_URL: "https://vbrest.by",
         VIRTUALBREST_URL: "https://virtualbrest.ru",
-        API_URL: "https://vbrest.by/api",
         LOCALHOST_API_URL: "http://localhost:3000/api",
-        LOCALHOST_URL: "http://localhost:3000",
-        DB_CONFIG_DATA_HOST: "localhost",
-        DB_CONFIG_DATA_USER_NAME: "root",
-        DB_CONFIG_DATA_PASSWORD: "4WW6EnjWOl",
-        DB_CONFIG_DATA_DATABASE_NAME: "virtualbrest"
+        PROD_API_URL: "https://photo1.virtualbrest.ru/api",
+        LOCALHOST_ROOT_URL: "D:/work/virtualbrest/other",
+        PROD_ROOT_URL: "https://photo1.virtualbrest.ru"
     },
     swcMinify: true,
     images: {

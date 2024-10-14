@@ -9,7 +9,7 @@
   display: flex;
   flex-direction: row;
   width: 90%;
-  margin: 5% auto;
+  margin: 0 auto;
 }
 
 .upload_block {
@@ -27,14 +27,14 @@
 @media (max-width: 500px) {
   .content_grid_block {
     width: 100%;
-    margin: 100px 0 20px 10px;
+    margin: 0 auto;
     flex-wrap: wrap;
   }
   .photo_list_block {
-    width: 96%;
-    margin-left: -5px;
+    width: 90%;
   }
   .upload_block {
-    width: 95%;
+    padding: 0 10px;
+    width: 100%;
   }
 }

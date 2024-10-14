@@ -13,7 +13,7 @@
     height: 100%;
     display: flex;
     width: 100%;
-    padding-left: 90px;
+    padding-left: 6%;
     justify-content: space-between;
     align-items: center;
 }
@@ -26,8 +26,7 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    align-items: flex-start;
-    width: 500px;
+    align-items: flex-end;
 }
 .footer_bottom_text_block{
     display: flex;
@@ -46,4 +45,17 @@
     padding: 10px 0;
     border-bottom-color: #ffffff;
     transition: 1s border-bottom-color
+}
+
+@media (max-width: 500px) {
+    .main_footer_block {
+        min-width: auto;
+        flex-wrap: wrap;
+    }
+    .dark_logo {
+        display: none;
+    }
+    .footer_text {
+        width: auto;
+    }
 }

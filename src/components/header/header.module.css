@@ -1,4 +1,5 @@
 .main_header_block {
+    position: relative;
     margin: 0 auto;
     width: 100%;
     text-align: center;
@@ -29,39 +30,18 @@
     top: 34px;
 }
 
-.date_picker {
-
-}
-
 .buttons_block {
     display: flex;
-    width: 30%
+    justify-content: flex-end;
+    align-items: center;
+    width: 500px;
+    margin-right: 50px;
 }
-
-/*.buttons {*/
-/*    outline: none;*/
-/*    text-decoration: none;*/
-
-/*    margin-right: 10px;*/
-/*    color: #FFFFFF !important;*/
-/*    transition: 1s background-color, color, border;*/
-/*    background-color: #365ac7;*/
-/*}*/
-
-/*.buttons:hover {*/
-/*    border: 1px solid rgba(255, 255, 255, 0.44) !important;*/
-/*    color: #FFFFFF !important;*/
-/*    transition: 1s background-color, color, border;*/
-/*    background-color: #14229F;*/
-/*}*/
-
 @media (max-width: 500px) {
-    .buttons_block {
+    .logo_container {
         display: none;
     }
-    .date_picker {
-        position: absolute;
-        left: 50%;
-        top: 120px;
+    .buttons_block {
+        margin-right: 0;
     }
 }

@@ -9,12 +9,9 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "react": "^18",
-    "react-dom": "^18",
-    "next": "14.2.13",
-    "@bytescale/upload-widget-react": "^4.19.0",
     "@emotion/react": "^11.13.0",
     "@emotion/styled": "^11.13.0",
+    "@hirohe/react-watermark": "^0.5.0",
     "@material-ui/core": "^4.12.4",
     "@material-ui/icons": "^4.11.3",
     "@mui/icons-material": "^5.16.7",
@@ -24,14 +21,18 @@
     "@mui/x-date-pickers": "^7.17.0",
     "axios": "^1.5.1",
     "dayjs": "^1.11.10",
-    "googleapis": "^144.0.0"
+    "mui-file-dropzone": "^4.0.2",
+    "next": "14.2.13",
+    "react": "^18",
+    "react-dom": "^18",
+    "sharp": "^0.33.5"
   },
   "devDependencies": {
-    "typescript": "^5",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "eslint": "^8",
-    "eslint-config-next": "14.2.13"
+    "eslint-config-next": "14.2.13",
+    "typescript": "^5"
   }
 }

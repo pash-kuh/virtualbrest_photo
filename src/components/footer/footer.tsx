@@ -15,13 +15,13 @@ export const Footer = () => {
                     {DarkLogoVb}
                 </Box>
 
-                <Box sx={{ display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "center", height: 100 }}>
+                <Box sx={{ display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "center", height: 100, marginRight: "6%" }}>
                     <Box className={s.footer_text_block}>
                         <Box className={s.footer_text}>
                             Использование материалов разрешено только при указании прямой ссылки на сайт {staticData.siteName.ruString}!
                         </Box>
-                        <Box>
-                            <Box component="span">Copyright © {new Date().getFullYear()}</Box>
+                        <Box sx={{ marginRight: "10%" }}>
+                            Copyright © {new Date().getFullYear()}
                         </Box>
                     </Box>
                 </Box>

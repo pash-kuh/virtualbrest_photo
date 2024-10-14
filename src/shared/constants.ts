@@ -1,12 +1,5 @@
 import { PaletteMode } from "@mui/material"
 import grey from "@mui/material/colors/grey"
-import { UploadDropzoneConfig } from "@bytescale/upload-widget-react"
-
-export const apiPaths = {
-    initGoogleStoragePath: "https://cloud-api.yandex.net/v1/disk",
-    getImagesData: "/resources?path=",
-    getSaveImageUrl: "/resources/upload"
-}
 
 export const notification = {
     fileExtensionErr: "Это расширение не поддерживается.",
@@ -43,14 +36,13 @@ export const staticData = {
     }
 }
 
-export const uploadOptions: UploadDropzoneConfig = {
-    apiKey: "free",
-    multi: true,
-    maxFileCount: 5,
-    showFinishButton: true,
+export const uploadOptions = {
+    rootFolderName: "uploads",
+    maxFileCount: 10,
+    acceptedFiles: ["image/jpeg", "image/png", "image/jpg"],
+    maxFileSizeBytes: 10485760,
     locale: {
         orDragDropFileMulti: allTexts.descriptionUpload,
-        "removed!": "удалено",
         addAnotherFileBtn: "Выбрать картинку",
         uploadFileMultiBtn: "Выбрать картинку",
         cancelBtn: "отмена",
@@ -59,19 +51,10 @@ export const uploadOptions: UploadDropzoneConfig = {
         cancelPreviewBtn: "отмена",
         pleaseWait: "Пожалуйста подождите...",
         maxFilesReachedPrefix: "Максимальное количество выбираемых картинок",
-        "error!": "ошибка",
+        continueBtn: "Продолжить",
+        acceptedFilesText: "Допустимые расширения",
+        previewText: "Предпросмотр загружаемых картинок",
     }
-}
-
-export const config = {
-    client_id: "656271289758-cqa214fa2krg692hcmv30dlqnfl4u5ba.apps.googleusercontent.com",
-    project_id: "virtualbrest-photos",
-    auth_uri: "https://accounts.google.com/o/oauth2/auth",
-    token_uri: "https://oauth2.googleapis.com/token",
-    auth_provider_x509_cert_url: "https://www.googleapis.com/oauth2/v1/certs",
-    client_secret: "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",
-    redirect_uris: ["http://localhost:3000"],
-    javascript_origins: ["https://photo1.virtualbrest.ru"]
 }
 
 export const localstorageKeys = {
@@ -79,30 +62,11 @@ export const localstorageKeys = {
 }
 
 export const getDesignTokens = (mode: PaletteMode) => ({
-    typography: {
-        allVariants: {
-            ...(mode === 'light'
-                // light
-                ? {
-                    color: "rgba(39, 39, 52, 0.95)",
-                }
-                // dark
-                : {
-                    color: "#FFFFFF",
-                }),
-        },
-    },
     palette: {
         mode,
         ...(mode === 'light'
             // light
             ? {
-                primary: {
-                    main: "rgba(39, 39, 52, 0.95)",
-                    contrastText: "rgba(39, 39, 52, 0.95)",
-                    dark: "#F8F8F9",
-                    light: "rgba(39, 39, 52, 0.95)",
-                },
                 text: {
                     primary: "rgba(39, 39, 52, 0.95)",
                     secondary: "#F8F8F9",
@@ -111,12 +75,6 @@ export const getDesignTokens = (mode: PaletteMode) => ({
             }
             // dark
             : {
-                primary: {
-                    main: "#FFFFFF",
-                    contrastText: "#F8F8F9",
-                    light: "#F8F8F9",
-                    dark: "rgba(39, 39, 52, 0.95)",
-                },
                 background: {
                     default: "#363636",
                     paper: "#363636"
@@ -138,12 +96,4 @@ export const allLinks = {
     oldContactsService: "https://virtualbrest.ru/contakt.php"
 }
 
-export const uploadText = `
-                Допускаются файлы типов: JPG, PNG и GIF объёмом не более 5 мегабайта каждый. Изображения ограничены по ширине размером 750
-                пикселей и по высоте 700 пикселей (при большем размере картинки уменьшаются).
-                Сервис работает и с мобильных браузеров (телефоны, смартфоны, планшеты).
-                Если вы хотите отправить свои фото автору сайта, воспользуйтесь разделом
-`
-
-export const validExtensions = ["jpeg", "jpg", "png"]
 export const limit4mb: (size: number) => boolean = (size: number) => (size / 1024 / 1024 < 4)
