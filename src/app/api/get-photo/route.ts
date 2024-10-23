@@ -8,7 +8,7 @@ import { uploadOptions } from "@/shared/constants"
 
 export async function GET() {
     try {
-        const directoryPath = path.join(process.cwd(), "../", uploadOptions.rootFolderName)
+        const directoryPath = path.join(process.cwd(), "", uploadOptions.rootFolderName)
         const files = await readdir(directoryPath)
 
         const jsonObjects = files.map(file => ({

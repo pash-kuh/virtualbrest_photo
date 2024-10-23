@@ -5,9 +5,9 @@ import ContentCopyOutlinedIcon from "@mui/icons-material/ContentCopyOutlined"
 export const CopyToClipboardButton = ({ text }: { text: string }) => {
     const [open, setOpen] = useState(false)
 
-    const handleClick = () => {
+    const handleClick = async () => {
         setOpen(true)
-        navigator.clipboard.writeText(text)
+        await navigator.clipboard.writeText(text)
     }
 
     return (
@@ -17,7 +17,7 @@ export const CopyToClipboardButton = ({ text }: { text: string }) => {
             </IconButton>
             <Snackbar
                 message="Copied to clibboard"
-                anchorOrigin={{ vertical: "top", horizontal: "right" }}
+                anchorOrigin={{ vertical: "bottom", horizontal: "right" }}
                 autoHideDuration={2000}
                 onClose={() => setOpen(false)}
                 open={open}
