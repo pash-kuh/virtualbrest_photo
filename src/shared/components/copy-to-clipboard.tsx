@@ -22,7 +22,7 @@ export const CopyToClipboardButton = ({ text }: { text: string }) => {
                 <ContentCopyOutlinedIcon fontSize="small" />
             </IconButton>
             <Snackbar
-                message="Copied to clibboard"
+                message="Путь успешно скопирован в буфер обмена."
                 anchorOrigin={{ vertical: "top", horizontal: "right" }}
                 autoHideDuration={2000}
                 onClose={() => setOpen(false)}
