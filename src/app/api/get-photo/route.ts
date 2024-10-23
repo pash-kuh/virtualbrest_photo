@@ -7,8 +7,9 @@ import { badGatewayStatus, correctStatus, ROOT_URL } from "@/shared/api/custom-f
 import { uploadOptions } from "@/shared/constants"
 
 export async function GET() {
+    const { pathToImageFolder, rootFolderName } = uploadOptions
     try {
-        const directoryPath = path.join(process.cwd(), "../", uploadOptions.rootFolderName)
+        const directoryPath = path.join(process.cwd(), pathToImageFolder, rootFolderName)
         const files = await readdir(directoryPath)
 
         const jsonObjects = files.map(file => ({

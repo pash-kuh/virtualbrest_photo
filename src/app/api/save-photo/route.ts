@@ -10,20 +10,21 @@ import { uploadOptions } from "@/shared/constants"
 
 
 export async function POST(request: Request) {
+    const { pathToImageFolder, rootFolderName } = uploadOptions
+
     try {
         const files = await request.json()
 
         if (!files || files.length === 0) { return NextResponse.json(notFoundStatus) }
 
-        const uploadPath = path.join(process.cwd(), "../", uploadOptions.rootFolderName)
+        const directoryPath = path.join(process.cwd(), pathToImageFolder, rootFolderName)
 
         for (const file of files) {
             const arrayBuffer = await file.arrayBuffer()
             const buffer = Buffer.from(arrayBuffer)
-            const filePath = path.join(uploadPath, file.imageURL)
+            const filePath = path.join(directoryPath, file.imageURL)
 
             await writeFile(filePath, buffer)
-            console.log(`Image written: ${filePath}`)
         }
 
         return NextResponse.json(correctStatus("success"))

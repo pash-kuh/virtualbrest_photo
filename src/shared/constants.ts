@@ -38,6 +38,7 @@ export const staticData = {
 
 export const uploadOptions = {
     rootFolderName: "uploads",
+    pathToImageFolder: "../var/www/html",
     maxFileCount: 10,
     acceptedFiles: ["image/jpeg", "image/png", "image/jpg"],
     maxFileSizeBytes: 10485760,
