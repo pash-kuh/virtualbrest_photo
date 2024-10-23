@@ -24,7 +24,7 @@ const nextConfig = {
         VIRTUALBREST_URL: "https://virtualbrest.ru",
         LOCALHOST_API_URL: "http://localhost:4000/api",
         PROD_API_URL: "http://photo2.virtualbrest.ru/api",
-        LOCALHOST_ROOT_URL: "D:/work/virtualbrest/other/virtualbrest_photo",
+        LOCALHOST_ROOT_URL: "D:/work/virtualbrest/other",
         PROD_ROOT_URL: "http://photo2.virtualbrest.ru"
     },
     swcMinify: true,
