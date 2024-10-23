@@ -23,7 +23,7 @@ export const CopyToClipboardButton = ({ text }: { text: string }) => {
             </IconButton>
             <Snackbar
                 message="Copied to clibboard"
-                anchorOrigin={{ vertical: "top", horizontal: "right" }}
+                anchorOrigin={{ vertical: "bottom", horizontal: "right" }}
                 autoHideDuration={2000}
                 onClose={() => setOpen(false)}
                 open={open}
