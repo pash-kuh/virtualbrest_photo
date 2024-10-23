@@ -5,9 +5,15 @@ import ContentCopyOutlinedIcon from "@mui/icons-material/ContentCopyOutlined"
 export const CopyToClipboardButton = ({ text }: { text: string }) => {
     const [open, setOpen] = useState(false)
 
-    const handleClick = () => {
+    const handleClick = async () => {
+        const textarea = document.createElement('textarea')
+        textarea.value = text
+        document.body.appendChild(textarea)
+        textarea.select()
+        document.execCommand('copy')
+        document.body.removeChild(textarea)
+
         setOpen(true)
-        navigator.clipboard.writeText(text)
     }
 
     return (
