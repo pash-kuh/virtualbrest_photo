@@ -11,8 +11,11 @@ interface OneGridItemInterface {
     photo: OneItemPhoto
     gridView: TypeOfView
 }
+type DataType = {
+    [key: string]: { src: string; srcSet: string };
+}
 
-const data = {
+const data: DataType  = {
     "standard": {
         srcSet: "w=164&h=164&fit=crop&auto=format&dpr=2 2x",
         src: "w=164&h=164&fit=crop&auto=format"
