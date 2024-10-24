@@ -19,12 +19,14 @@
     "@mui/material": "^6.1.1",
     "@mui/styled-engine-sc": "^6.0.0-alpha.18",
     "@mui/x-date-pickers": "^7.17.0",
+    "@types/uuid": "^10.0.0",
     "axios": "^1.5.1",
     "dayjs": "^1.11.10",
     "mui-file-dropzone": "^4.0.2",
     "next": "14.2.13",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "uuid": "^10.0.0"
   },
   "devDependencies": {
     "@types/node": "^20",

@@ -3,21 +3,18 @@
 import { writeFile } from "fs/promises"
 import path from "path"
 import {
-    correctStatus, badGatewayStatus, notFoundStatus
+    correctStatus, badGatewayStatus, notFoundStatus, getPathToImageFolder
 } from "@/shared/api/custom-fetch"
 import { NextResponse } from "next/server"
-import { uploadOptions } from "@/shared/constants"
 
 
 export async function POST(request: Request) {
-    const { pathToImageFolder, rootFolderName } = uploadOptions
-
     try {
         const files = await request.json()
 
         if (!files || files.length === 0) { return NextResponse.json(notFoundStatus) }
 
-        const directoryPath = path.join(process.cwd(), pathToImageFolder, rootFolderName)
+        const directoryPath = getPathToImageFolder()
 
         for (const file of files) {
             const arrayBuffer = await file.arrayBuffer()

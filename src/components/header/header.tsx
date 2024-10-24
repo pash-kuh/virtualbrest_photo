@@ -1,53 +1,96 @@
 "use client"
 
-import React from "react"
-import { allLinks, staticData } from "@/shared/constants"
+import React, { useEffect, useState } from "react"
+import { allLinks, defaultIconButtonSx, localstorageKeys, staticData } from "@/shared/constants"
 import { LogoVB } from "@/shared/svg"
 import AppBar from "@mui/material/AppBar"
 import Toolbar from "@mui/material/Toolbar"
 import Link from "@mui/material/Link"
-import Button from "@mui/material/Button"
 import Box from "@mui/material/Box"
-import {
-    defaultIconButtonSx,
-    ToggleColorModeButton
-} from "@/shared/components/toggle-theme-button"
+import Badge from "@mui/material/Badge"
+import IconButton from "@mui/material/IconButton"
 import NotificationsOutlinedIcon from "@mui/icons-material/NotificationsOutlined"
-import { IconButton } from "@mui/material"
+import SettingsOutlinedIcon from "@mui/icons-material/SettingsOutlined"
+import { ToggleColorModeButton } from "@/shared/components/toggle-theme-button"
+import { notificationMessages } from "@/shared/notifications"
+import { ToolbarMenu } from "@/shared/components/menu"
+import { Notifications } from "@/shared/components/notifications"
+import { ToolbarKeysType } from "@/shared/types"
 
 import s from "./header.module.css"
 
-
 export const Header = () => {
-    const onContactClickHandler = () => {
-        window.open(staticData.virtualbrest_telegram_bot_link, '_blank')
+    const [profileAnchor, setProfileAnchor] = useState<HTMLElement | null>(null)
+    const [badgeNumber, setBadgeNumber] = useState<number | undefined>(notificationMessages.current.length)
+    const [notificationAnchor, setNotificationAnchor] = useState<HTMLElement | null>(null)
+
+    useEffect(() => {
+        if (localStorage[localstorageKeys.notificationBadge]) { setBadgeNumber(undefined) }
+    }, [localStorage[localstorageKeys.notificationBadge]])
+
+    const handleNotificationClick = ({ currentTarget }: React.MouseEvent<HTMLElement>) => {
+        if (!localStorage[localstorageKeys.notificationBadge]) {
+            localStorage.setItem(localstorageKeys.notificationBadge, "isChecked")
+        }
+        setNotificationAnchor(currentTarget)
+    }
+    const handleCloseDropDown = () => {
+        setNotificationAnchor(null)
+        setProfileAnchor(null)
+    }
+    const onClickMenuItem = async (key: ToolbarKeysType) => {
+        if (key === "contact") {
+            window.open(staticData.virtualbrest_telegram_bot_link, '_blank')
+        }
+        handleCloseDropDown()
     }
 
     return (
-        <AppBar className={s.main_header_block}>
-            <Toolbar className={s.header_block}>
-                <Link href={allLinks.newServiceVB} className={s.logo_container}>
-                    {LogoVB(s.logo)}
-                </Link>
+        <>
+            <AppBar className={s.main_header_block}>
+                <Toolbar className={s.header_block}>
+                    <Link href={allLinks.newServiceVB} className={s.logo_container}>
+                        {LogoVB(s.logo)}
+                    </Link>
 
-                <Box className={s.buttons_block}>
-                    <Button color="inherit" onClick={onContactClickHandler} sx={{ textTransform: "none" }}>
-                        Связаться с нами
-                    </Button>
-                    <Button type="link" href={allLinks.oldServiceNews} color="inherit" sx={{ textTransform: "none" }}>
-                        Новости
-                    </Button>
-                    <Button type="link" href={allLinks.oldServiceMobile} color="inherit" sx={{ textTransform: "none" }}>
-                        Мобильная версия
-                    </Button>
+                    <Box className={s.buttons_block}>
+                        <ToggleColorModeButton />
 
-                    <ToggleColorModeButton />
+                        <IconButton
+                            size="small"
+                            color="inherit"
+                            onClick={handleNotificationClick}
+                            sx={{ ...defaultIconButtonSx, p: 1 }}
+                        >
+                            <Badge badgeContent={badgeNumber} color="error">
+                                <NotificationsOutlinedIcon />
+                            </Badge>
+                        </IconButton>
+                        <IconButton
+                            size="small"
+                            edge="end"
+                            sx={{ ...defaultIconButtonSx, p: 1 }}
+                            aria-label="account of current user"
+                            aria-haspopup="true"
+                            onClick={({ currentTarget }) => setProfileAnchor(currentTarget)}
+                            color="inherit"
+                        >
+                            <SettingsOutlinedIcon />
+                        </IconButton>
+                    </Box>
+                </Toolbar>
+            </AppBar>
 
-                    <IconButton sx={defaultIconButtonSx}>
-                        <NotificationsOutlinedIcon />
-                    </IconButton>
-                </Box>
-            </Toolbar>
-        </AppBar>
+            <ToolbarMenu
+                setVisible={handleCloseDropDown}
+                anchor={profileAnchor}
+                onClickHandler={onClickMenuItem}
+            />
+
+            <Notifications
+                setVisible={handleCloseDropDown}
+                anchor={notificationAnchor}
+            />
+        </>
     )
 }

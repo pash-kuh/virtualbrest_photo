@@ -59,7 +59,19 @@ export const uploadOptions = {
 }
 
 export const localstorageKeys = {
-    theme: "theme"
+    theme: "#theme",
+    notificationBadge: `#notification_badge_${2}`,
+}
+
+export const adminsContactData = {
+    main_dev: {
+        email: "developer.virtualbrest@gmail.com",
+        emailLink: "mailto:developer.virtualbrest@gmail.com"
+    },
+    ak: {
+        email: "admin@virtualbrest.com",
+        emailLink: "mailto:admin@virtualbrest.com"
+    }
 }
 
 export const getDesignTokens = (mode: PaletteMode) => ({
@@ -88,6 +100,14 @@ export const getDesignTokens = (mode: PaletteMode) => ({
             }),
     },
 })
+
+export const defaultIconButtonSx = {
+    borderRadius: "10px",
+    mx: "4px",
+    border: `1px solid rgba(255,255,255,0.41)`,
+    p: 1,
+    color: "#ffffff"
+}
 
 export const allLinks = {
     oldServiceVB: "https://virtualbrest.ru/",

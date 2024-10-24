@@ -1,0 +1,19 @@
+.admin_contact_block {
+    padding-left: 2px;
+    padding-top: 5px;
+    font-weight: 600;
+    font-size: 10px !important;
+    background: #001529;
+    line-height: 1.5;
+    color: rgba(157,157,157,0.5);
+    position: sticky;
+    bottom: 0;
+}
+
+.list_main_block {
+    background: #001529;
+    max-height: 400px;
+    overflow: auto;
+    scrollbar-color: #ffffff #001529;
+    scrollbar-width: thin;
+}

@@ -2,14 +2,12 @@
 
 import { NextResponse } from "next/server"
 import { readdir } from "fs/promises"
-import path from "path"
-import { badGatewayStatus, correctStatus, ROOT_URL } from "@/shared/api/custom-fetch"
+import { badGatewayStatus, correctStatus, getPathToImageFolder, ROOT_URL } from "@/shared/api/custom-fetch"
 import { uploadOptions } from "@/shared/constants"
 
 export async function GET() {
-    const { pathToImageFolder, rootFolderName } = uploadOptions
     try {
-        const directoryPath = path.join(process.cwd(), pathToImageFolder, rootFolderName)
+        const directoryPath = getPathToImageFolder()
         const files = await readdir(directoryPath)
 
         const jsonObjects = files.map(file => ({

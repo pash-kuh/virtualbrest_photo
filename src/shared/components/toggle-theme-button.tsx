@@ -6,11 +6,7 @@ import LightModeOutlinedIcon from "@mui/icons-material/LightModeOutlined"
 import Brightness2OutlinedIcon from "@mui/icons-material/Brightness2Outlined"
 import { ColorModeContext } from "@/shared/providers"
 import { IconButton } from "@mui/material"
-
-export const defaultIconButtonSx = {
-    borderRadius: "5px",
-    color: "#ffffff"
-}
+import { defaultIconButtonSx } from "@/shared/constants"
 
 export const ToggleColorModeButton = () => {
     const theme = useTheme()
