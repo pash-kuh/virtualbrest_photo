@@ -25,8 +25,10 @@ export const Header = () => {
     const [notificationAnchor, setNotificationAnchor] = useState<HTMLElement | null>(null)
 
     useEffect(() => {
-        if (localStorage[localstorageKeys.notificationBadge]) { setBadgeNumber(undefined) }
-    }, [localStorage[localstorageKeys.notificationBadge]])
+        if (localStorage.getItem(localstorageKeys.notificationBadge)) {
+            setBadgeNumber(undefined)
+        }
+    }, [])
 
     const handleNotificationClick = ({ currentTarget }: React.MouseEvent<HTMLElement>) => {
         if (!localStorage[localstorageKeys.notificationBadge]) {
